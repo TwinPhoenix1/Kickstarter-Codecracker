@@ -1,6 +1,4 @@
-This is a web app that predicts with 80%+ confidence whether your Kickstarter project will be successful. 
-
-Sounds like a gimmick until you realize it's entirely based on factors you can control. 
+This is a web app that predicts with 80%+ confidence whether your Kickstarter project will be successful. Sounds like a gimmick until you realize it's entirely based on factors you can control. 
 
 Yes, you can use data science to tweak your launch strategy to increase your chances of success.
 
