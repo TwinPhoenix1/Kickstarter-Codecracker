@@ -1,0 +1,193 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+        <link rel="stylesheet" href="https://codepen.io/gymratpacks/pen/VKzBEp#0">
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    </head>
+    <body>
+      <div class="row">
+    <div class="col-md-12">
+      <form action="/predict" method="post">
+        <h1> Kickstarter Codecracker </h1>
+        {% if prediction == 1 %}
+        <h2>Chances are your project will be successful!</h2>
+        {% elif prediction == 0 %}
+        <h2>Chances are your project will NOT be successful! Try again!</h2>
+        {% else %}
+        {% endif %}
+        <fieldset>
+          
+          <legend><span class="number">1</span> Your Project's Details</legend>
+        
+          <label for="category_name">Category:</label>
+          <select id="category" name="category_name">
+            <option value="Comedy">Comedy</option>
+            <option value="Plays">Plays</option>
+            <option value="R&B">R&B</option>
+            <option value="Sound">Sound</option>
+            <option value="Software">Software</option>
+            <option value="Video">Video</option>
+            <option value="Pop">Pop</option>
+            <option value="Audio">Audio</option>
+            <option value="Webcomics">Webcomics</option>
+            <option value="Literary Spaces">Literary Spaces</option>
+            <option value="Web">Web</option>
+            <option value="Cookbooks">Cookbooks</option>
+            <option value="Literary Journals">Literary Journals</option>
+            <option value="Community Gardens">Community Gardens</option>
+            <option value="Print">Print</option>
+            <option value="Punk">Punk</option>
+            <option value="Spaces">Spaces</option>
+            <option value="Bacon">Bacon</option>
+            <option value="Journalism">Journalism</option>
+            <option value="Photo">Photo</option>
+            <option value="Letterpress">Letterpress</option>
+            <option value="Small Batch">Small Batch</option>
+            <option value="Product Design">Product Design</option>
+            <option value="Fiction">Fiction</option>
+            <option value="Food">Food</option>
+            <option value="Restaurants">Restaurants</option>
+            <option value="Drinks">Drinks</option>
+            <option value="Vegan">Vegan</option>
+            <option value="Food Trucks">Food Trucks</option>
+            <option value="Toys">Toys</option>
+            <option value="Farms">Farms</option>
+            <option value="Farmer's Markets">Farmer's Markets</option>
+            <option value="Graphic Design">Graphic Design</option>
+            <option value="Events">Events</option>
+            <option value="Design">Design</option>
+            <option value="Typography">Typography</option>
+            <option value="Interactive Design">Interactive Design</option>
+            <option value="Architecture">Architecture</option>
+          </select>
+          
+          
+          <label for="goal_usd">Goal: (aim for smaller to increase your chances)</label>
+          <input type="number" id="mail" name="goal_usd">
+       
+          <label for="currency">Currency:</label>
+          <select id="currency" name="currency">
+            <option value="USD">USD</option>
+            <option value="GBP">GBP</option>
+            <option value="EUR">EUR</option>
+            <option value="CAD">CAD</option>
+            <option value="JPY">JPY</option>
+            <option value="MXN">MXN</option>
+            <option value="CHF">CHF</option>
+            <option value="AUD">AUD</option>
+            <option value="SGD">SGD</option>
+            <option value="DKK">DKK</option>
+            <option value="HKD">HKD</option>
+            <option value="SEK">SEK</option>
+            <option value="NOK">NOK</option>
+            <option value="NZD">NZD</option>
+            <option value="PLN">PLN</option>
+          </select>
+          
+          <label>Planning on a prelaunch stage?</label>
+          <input type="radio" id="under_13" value=1 name="prelaunch_activated"><label for="1" class="light">Yes (recommended)</label><br>
+          <input type="radio" id="over_13" value=0 name="prelaunch_activated"><label for="0" class="light">No</label>
+          
+        </fieldset>
+        <fieldset>  
+        
+          <legend><span class="number">2</span> Your Launch</legend>
+          
+          <label for="created_at_weekday">You plan to CREATE your project ON:</label>
+          <select id="job" name="created_at_weekday">
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+          </select>
+          
+          <label for="created_at_two_hour_chunk">You plan to CREATE your project AT:</label>
+          <select id="job" name="created_at_two_hour_chunk">
+            <option value=0>12:00 AM - 2:00 AM</option>
+            <option value=1>2:00 AM - 4:00 AM</option>
+            <option value=2>4:00 AM - 6:00 AM</option>
+            <option value=3>6:00 AM - 8:00 AM</option>
+            <option value=4>8:00 AM - 10:00 AM</option>
+            <option value=5>10:00 AM - 12:00 PM</option>
+            <option value=6>12:00 PM - 2:00 PM</option>
+            <option value=7>2:00 PM - 4:00 PM</option>
+            <option value=8>4:00 PM - 6:00 PM</option>
+            <option value=9>6:00 PM - 8:00 PM</option>
+            <option value=10>8:00 PM - 10:00 PM</option>
+            <option value=11>10:00 PM - 12:00 AM</option>        
+          </select>
+
+
+
+          <label for="launched_at_weekday">You plan to LAUNCH your project ON:</label>
+          <select id="job" name="launched_at_weekday">
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+          </select>
+          
+          <label for="launched_at_two_hour_chunk">You plan to LAUNCH your project AT:</label>
+          <select id="job" name="launched_at_two_hour_chunk">
+            <option value=0>12:00 AM - 2:00 AM</option>
+            <option value=1>2:00 AM - 4:00 AM</option>
+            <option value=2>4:00 AM - 6:00 AM</option>
+            <option value=3>6:00 AM - 8:00 AM</option>
+            <option value=4>8:00 AM - 10:00 AM</option>
+            <option value=5>10:00 AM - 12:00 PM</option>
+            <option value=6>12:00 PM - 2:00 PM</option>
+            <option value=7>2:00 PM - 4:00 PM</option>
+            <option value=8>4:00 PM - 6:00 PM</option>
+            <option value=9>6:00 PM - 8:00 PM</option>
+            <option value=10>8:00 PM - 10:00 PM</option>
+            <option value=11>10:00 PM - 12:00 AM</option>        
+          </select>
+          
+          <label for="deadline_weekday">You plan to set your DEADLINE ON:</label>
+          <select id="job" name="deadline_weekday">
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+          </select>
+          
+          <label for="deadline_two_hour_chunk">You plan to set your DEADLINE AT:</label>
+          <select id="job" name="deadline_two_hour_chunk">
+            <option value=0>12:00 AM - 2:00 AM</option>
+            <option value=1>2:00 AM - 4:00 AM</option>
+            <option value=2>4:00 AM - 6:00 AM</option>
+            <option value=3>6:00 AM - 8:00 AM</option>
+            <option value=4>8:00 AM - 10:00 AM</option>
+            <option value=5>10:00 AM - 12:00 PM</option>
+            <option value=6>12:00 PM - 2:00 PM</option>
+            <option value=7>2:00 PM - 4:00 PM</option>
+            <option value=8>4:00 PM - 6:00 PM</option>
+            <option value=9>6:00 PM - 8:00 PM</option>
+            <option value=10>8:00 PM - 10:00 PM</option>
+            <option value=11>10:00 PM - 12:00 AM</option>        
+          </select>
+          
+          <label for="buildup_length">Prelaunch stage length in days:</label>
+          <input type="number" id="mail" name="buildup_length">
+          <label for="campaign_length">Campaign length in days:</label>
+          <input type="number" id="mail" name="campaign_length">
+        <button type="submit">Submit</button>
+        
+       </form>
+        </div>
+      </div>
+      
+    </body>
+</html>
