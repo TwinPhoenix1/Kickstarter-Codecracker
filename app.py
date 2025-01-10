@@ -1,7 +1,7 @@
 from functions import *
 import pandas as pd
 from xgboost import XGBClassifier
-from flask import Flask, render_template, session, request
+from flask import Flask, render_template, request
 from flask_session import Session
 import os
 
